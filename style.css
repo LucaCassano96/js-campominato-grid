@@ -49,10 +49,23 @@ main{
     width: 45px;
     height: 45px;
     border: 2px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .background{
     background-color: blue;
+}
+
+.dispalynone{
+    display: none;
+}
+
+.dispalyactive{
+display: block;
+color: crimson;
+font-size: 18px;
 }
 
 

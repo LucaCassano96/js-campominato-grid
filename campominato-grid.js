@@ -17,23 +17,33 @@ const gridContainer = `<div id="grid"></div>`;
 
  /* arrey numeri da 1 a 100 */
 
- let arreyNumDaInserire =  listaNum("1", "100");
- console.log(arreyNumDaInserire); 
+ let listaNumeriOrdinata = listaNum ("1", "100")
 
 
 
  /* creo i quadrati che comporranno la griglia */
 
- for (let i = 0; i < 100; i++) {
-    
+ for (let i = 0; i < listaNumeriOrdinata.length; i++) {
+
+    /* richiamo la funzione per creare il div  */
     const newSquare = square("div", "square");
+
+    /* creo lo span che conterrà il numero */
+
+    const newSpan = document.createElement("span"); 
+    newSpan.append(listaNumeriOrdinata[i]);
+    newSquare.append(newSpan);
+    newSpan.classList.add("dispalynone");
     
+    /* funzione che al click aggiungo classe background e dispalyactive */
     newSquare.addEventListener("click",
     function() {
-    newSquare.classList.add("background");
 
-    
+    newSquare.classList.add("background");
+    newSpan.classList.add("dispalyactive");
+    console.log(newSpan);
     }
+
     );
 
     container.append(newSquare);
@@ -63,16 +73,16 @@ function square(div, classAdd) {
 
         /* creare una lista di numeri ordinata  */
 function listaNum(min, max) {
+
+    const arrey = []
     
     for (let i = min; i <= max; i++) {
+
+        arrey.push(i)
         
-        let element = [i]; 
-        console.log(element);
-        
-        return element;
     }
     
-}
+    return arrey;
+} 
 
 
-    
