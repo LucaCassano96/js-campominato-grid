@@ -38,7 +38,7 @@ main{
     align-items: center;
 }
 
-.grid{
+#grid{
     width: 450px;
     height: 450px;
     display: flex;
